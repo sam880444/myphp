@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery Site</title>
+	
+	</head>
+	<body>
+		<h1>write less do more</h1>
+	<!-- <script src="script/jquery-2.1.4.min.js"></script> -->
+	<!-- CDN  google的-->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+			!window.jQuery && document.write("<script src='script/jquery-2.1.4.min.js'><\/script>");
+		</script>
+		<script src="//ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
+		<script>
+		//window.onload = function(){}
+		//document.onready()  //DOM
+		
+		// jQuery(document).ready(function(){
+			// jQuery('h1').css('color','red');
+		// });
+		
+		// $(document).ready(function(){
+			// $('h1').css('color','blue');
+		// });
+		
+		//$衝突的解決方法一
+		// var j = jQuery.noConflict();
+		// //document.ready事件發生會執行的function
+		// j(function(){
+			// //程式碼寫在這裡
+			// j('h1').css('color','green');
+		// });
+		
+		//$衝突的解決方法二
+		// jQuery(function($){
+			// $('h1').css('color','orange');
+		// });
+		
+		//$衝突的解決方法三 必須放在<h1>後面 因為立即執行 與document.ready無關
+		//立即執行函式
+		(function($){
+			$('h1').css('color','pink');
+		})(jQuery);
+		</script>
+	</body>
+</html>

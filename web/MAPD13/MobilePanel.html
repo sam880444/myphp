@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>jQuery Site</title>
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+		<style>
+   			
+        </style>
+	</head>
+	<body>
+		<div data-role="page" id="template">
+			<header data-role="header"
+					data-position="fixed"
+			  		data-add-back-btn="true"
+			  		data-back-btn-text="返回">
+				<h1>Panel Page</h1>
+			</header>
+			
+			<div data-role="panel" id="panel1" data-position="left" data-display="overlay">
+				<p>Panel的內容</p>
+				
+				<a href="#" data-rel="close" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left">close</a>
+			</div>
+			
+			<div class="ui-content">
+				<a href="#panel1" class="ui-btn ui-btn-inline ui-corner-all">panel overlay</a>
+				
+			</div>
+			<footer data-role="footer" data-position="fixed">
+				<h4>&copy;@iiiedu</h4>
+			</footer>
+		</div>
+		<script src="script/jquery-2.1.4.min.js"></script>
+		<script src="script/jquery.mobile-1.4.5.min.js"></script>
+		<script>
+			(function($){
+			
+			})(jQuery);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery Site</title>
+		<style>
+            #img1{
+                /*width:360px;*/
+                /*height:280px;*/
+                opacity: 0.3;
+            }
+            #myDog{
+                width:80px;
+                position:absolute;
+                top:300px;
+                left:600px;
+            }
+        </style>
+	</head>
+	<body>
+		<input type="button" value="Effects" id="buttonEffect" /><br>
+        <img src="images/pacific.png" id="img1">
+        <br>
+        <img src="images/dog.gif" id="myDog" />
+		
+	<script src="script/jquery-2.1.4.min.js"></script>
+		<script>
+		//下面的函式是立即執行函式
+		//網頁載入時會立即被執行
+		//使用的目的是為了避免有廣域變數的存在
+		(function($){
+			$('#buttonEffect').on('click',function(){
+                   // $('#img1').hide(1500,function(){
+                       // $('#img1').show(1500);
+                   // }); 
+                   $('#img1').fadeToggle(1500);
+                });
+                
+                $('#img1').hover(function(){
+                    $(this).fadeTo(500,1);
+                },function(){
+                   $(this).fadeTo(500,0.3); 
+                });
+                
+                $('#myDog').on('click',function(){
+                	$(this).animate({
+                		"left":'100px',
+                		"top":'30px',
+                		"opacity":"0.3"
+                	},5000);
+                });
+		})(jQuery);
+		</script>
+	</body>
+</html>

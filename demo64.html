@@ -1,0 +1,25 @@
+<table border ="1" width="100%"
+       <tr>
+
+       </tr>
+
+<script>
+    var i =1;
+    $(document).ready(function(){
+        setInterval(function(){
+       $.get("brad65.php",function (data, status){
+           $("#dataarea"),html(data);
+       });
+        },)3000;
+    });
+
+
+
+
+</script>
+
+
+
+<h1>Brad Big Company</h1>
+<hr />
+<div id="dataarea"></div>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>jQuery Site</title>
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+		<style>
+   			
+        </style>
+	</head>
+	<body>
+		<div data-role="page" id="template">
+			<header data-role="header"
+					data-position="fixed"
+			  		data-add-back-btn="true"
+			  		data-back-btn-text="返回">
+				<h1>Template Page</h1>
+				<nav data-role="navbar" data-iconpos="left">
+					<ul>
+						<li><a href="MobileMultipage.html" data-icon="home">MultiPage</a></li>
+						<li><a href="#page1" data-icon="shop">Page1</a></li>
+						<li><a href="#page2" data-icon="phone">Page2</a></li>
+						<!-- <li><a href="#template" data-icon="phone">navbar</a></li> -->
+					</ul>
+				</nav>
+			</header>
+			<div class="ui-content">
+				<p>內容出現區</p>
+			
+				
+			</div>
+			<footer data-role="footer" data-position="fixed">
+				<h4>&copy;@iiiedu</h4>
+			</footer>
+		</div>
+		<div data-role="page" id="page1">
+			<header data-role="header"
+					data-position="fixed"
+					data-add-back-btn="true"
+					data-back-btn-text="返回">
+				<h1>Page 1</h1>
+			</header>
+			<div class="ui-content">
+				<p>內容出現區</p>
+				<div data-role="controlgroup" data-type="horizontal">
+				<a href="#template" data-role="button" data-inline="true" data-icon="cloud" data-iconpos="notext">TemplatePage</a>
+				<a href="#page2" data-role="button" data-inline="true" data-icon="grid" data-iconpos="right">Page2</a>
+				<a href="#page2" data-rel="dialog" class="ui-alt-icon ui-btn ui-icon-delete ui-btn-icon-left ui-btn-inline">Page3</a>
+				</div>
+			</div>
+			<footer data-role="footer" data-position="fixed">
+				<h4>&copy;@iiiedu</h4>
+			</footer>
+		</div>
+		<div data-role="page" id="page2">
+			<header data-role="header"
+					data-position="fixed">
+				<h1>Page 2</h1>
+			</header>
+			<div class="ui-content">
+				<p>內容出現區</p>
+				<a href="#template">TemplatePage</a>
+				<a href="#page1">Page1</a>
+			</div>
+			<footer data-role="footer" data-position="fixed">
+				<h4>&copy;@iiiedu</h4>
+			</footer>
+		</div>
+		
+		<script src="script/jquery-2.1.4.min.js"></script>
+		<script src="script/jquery.mobile-1.4.5.min.js"></script>
+		<script>
+			(function($){
+			
+			})(jQuery);
+		</script>
+	</body>
+</html>

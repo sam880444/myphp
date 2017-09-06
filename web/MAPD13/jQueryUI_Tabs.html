@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery Site</title>
+		<link href="css/jquery-ui.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="tabs">
+            <ul>
+                <li>
+                    <a href="#tabs-1">iPhone</a>
+                </li>
+                <li>
+                    <a href="#tabs-2">Unity</a>
+                </li>
+                <li>
+                    <a href="#tabs-3">jQuery</a>
+                </li>
+            </ul>
+            <div id="tabs-1">
+                <p>
+                    加入行動應用軟體開發，不僅是個人技術的養成，更有機會成為下一個iPhone致富傳奇的主角！帶領同學一探行動開發的世界，掌握iPhone與Android，結合雲端服務，成為IT界最夯的程式設計師！
+                </p>
+            </div>
+            <div id="tabs-2">
+                <p>
+                    欲躋身於3D遊戲美術設計的相關明星產業，你絕不可錯過！為了培訓3D遊戲專業人才，務求結業學員具備3D遊戲製作能力，運用主題式的教學，另外也整合業界製作技巧與經驗，落實技術與美學並重的目標。本班結訓後提供就業輔導，就業免煩惱！
+                </p>
+            </div>
+            <div id="tabs-3">
+                <p>
+                    jQuery可以完成許多動態效果，加上jQuery UI及Plugins的提供，更是大幅提升了開發網頁程式的豐富性及方便性，jQuery也推出了jQuery Mobile的技術，讓開發人員可以快速的開發出跨平台的使用者介面及程式。準備好要學習當今最熱門的JavaScript函式庫了嗎？想要無痛的踏進手持行動裝置的開發環境了嗎？
+                </p>
+            </div>
+        </div>
+		
+	<script src="script/jquery-2.1.4.min.js"></script>
+	<script src="script/jquery-ui.min.js"></script>
+		<script>
+		//下面的函式是立即執行函式
+		//網頁載入時會立即被執行
+		//使用的目的是為了避免有廣域變數的存在
+		(function($){
+				$("#tabs").tabs({
+                    event : "mouseover"
+                });
+		})(jQuery);
+		</script>
+	</body>
+</html>

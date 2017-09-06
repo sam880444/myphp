@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>jQuery Site</title>
+		<link rel="stylesheet" href="themes/jquery_mobile_theme.min.css">
+		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css">
+		<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css">
+		<style>
+   			
+        </style>
+	</head>
+	<body>
+		<div data-role="page" id="template" data-theme="a">
+			<header data-role="header"
+					data-position="fixed"
+			  		data-fullscreen="true"
+			  		data-add-back-btn="true"
+			  		data-back-btn-text="返回">
+				<h1>Template Page</h1>
+			</header>
+			<div class="ui-content">
+				<p>內容出現區</p>
+				<a href="MobileMultipage.html">MultiPage</a>
+				<a href="#page1">Page1</a>
+				<a href="#page2">Page2</a>
+				
+			</div>
+			<footer data-role="footer" data-position="fixed">
+				<h4>&copy;@iiiedu</h4>
+			</footer>
+		</div>
+		<div data-role="page" id="page1" data-theme="b">
+			<header data-role="header"
+					data-position="fixed"
+					data-add-back-btn="true"
+					data-back-btn-text="返回">
+				<h1>Page 1</h1>
+			</header>
+			<div class="ui-content">
+				<p>內容出現區</p>
+				<a href="#template">TemplatePage</a>
+				<a href="#page2">Page2</a>
+			</div>
+			<footer data-role="footer" data-position="fixed">
+				<h4>&copy;@iiiedu</h4>
+			</footer>
+		</div>
+		<div data-role="page" id="page2" data-theme="c">
+			<header data-role="header"
+					data-position="fixed"
+					data-add-back-btn="true"
+					data-back-btn-text="返回">
+				<h1>Page 2</h1>
+			</header>
+			<div class="ui-content">
+				<p>內容出現區</p>
+				<a href="#template">TemplatePage</a>
+				<a href="#page1">Page1</a>
+			</div>
+			<footer data-role="footer" data-position="fixed">
+				<h4>&copy;@iiiedu</h4>
+			</footer>
+		</div>
+		
+		<script src="script/jquery-2.1.4.min.js"></script>
+		<script src="script/jquery.mobile-1.4.5.min.js"></script>
+		<script>
+			(function($){
+			
+			})(jQuery);
+		</script>
+	</body>
+</html>

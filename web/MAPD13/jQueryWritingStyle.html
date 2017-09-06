@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery Site</title>
+	
+	</head>
+	<body>
+		<h1>write less do more</h1>
+		<h1>write less do more</h1>
+		<h1>write less do more</h1>
+		<h1>write less do more</h1>
+		<h1>write less do more</h1>
+		
+	<script src="script/jquery-2.1.4.min.js"></script>
+		<script>
+		//下面的函式是立即執行函式
+		//網頁載入時會立即被執行
+		//使用的目的是為了避免有廣域變數的存在
+		(function($){
+			var s1 = {
+				"color":"orange",
+				"background-color":"cyan",
+				"width":"300px",
+				"border":"1px solid green",
+				"text-align":"center",
+				"padding":"10px"
+			};
+			var s2 = {
+				"color":"pink",
+				"background-color":"purple",
+				"width":"300px",
+				"border":"1px solid green",
+				"text-align":"center",
+				"padding":"10px"
+			};
+			
+			$('h1')
+				// .css('color','pink')
+				// .css('background-color','cyan')
+				// .css('width','300px')
+				// .css('border','1px solid green')
+				.css('color','black')
+				.mouseover(over)
+				.mouseout(out);
+			
+			
+			// $('h1').css('color','pink');
+			// $('h1').mouseover(over);
+			//$('h1').mouseout(function(){});
+			// $('h1').mouseout(out);
+			
+			function over(){
+				//this表示觸發事件的物件
+				//this    ->JavaScript的this
+				//this.style.color = "purple";
+				//$(this) ->jQuery的this
+				$(this).css(s1);
+			}
+			function out(){
+				$(this).css(s2);
+			}
+		})(jQuery);
+		</script>
+	</body>
+</html>

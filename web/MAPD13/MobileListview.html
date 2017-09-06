@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>jQuery Site</title>
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+		<style>
+   			
+        </style>
+	</head>
+	<body>
+		<div data-role="page" id="template">
+			<header data-role="header"
+					data-position="fixed"
+			  		data-add-back-btn="true"
+			  		data-back-btn-text="返回">
+				<h1>Listview Page</h1>
+			</header>
+			<div class="ui-content">
+				<ul data-role="listview" data-filter="true" data-inset="true">
+					<li data-role="list-divider">
+						A<span class="ui-li-count">1</span>
+					</li>
+					<li>
+						<a href="#">
+							<img src="ProductImages/AGB00104.jpg">
+							<h2>SONY....</h2>
+							<p>特價:$7000</p>
+						</a>
+					</li>
+					<li data-role="list-divider">
+						B<span class="ui-li-count">2</span>
+					</li>
+					<li>
+						<a href="#">
+							<img src="ProductImages/AGB00098.jpg">
+							<h2>SONY....</h2>
+							<p>特價:$8000</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="ProductImages/AGB00097.jpg">
+							<h2>SONY....</h2>
+							<p>特價:$9000</p>
+						</a>
+					</li>
+					<li>aaa</li>
+					<li>bbb</li>
+					<li>ccc</li>
+				</ul>
+				
+			</div>
+			<footer data-role="footer" data-position="fixed">
+				<h4>&copy;@iiiedu</h4>
+			</footer>
+		</div>
+		<div data-role="page" id="page1">
+			<header data-role="header"
+					data-position="fixed"
+					data-add-back-btn="true"
+					data-back-btn-text="返回">
+				<h1>Page 1</h1>
+			</header>
+			<div class="ui-content">
+				<p>內容出現區</p>
+				<a href="#template">TemplatePage</a>
+				<a href="#page2">Page2</a>
+			</div>
+			<footer data-role="footer" data-position="fixed">
+				<h4>&copy;@iiiedu</h4>
+			</footer>
+		</div>
+		<div data-role="page" id="page2">
+			<header data-role="header"
+					data-position="fixed"
+					data-add-back-btn="true"
+					data-back-btn-text="返回">
+				<h1>Page 2</h1>
+			</header>
+			<div class="ui-content">
+				<p>內容出現區</p>
+				<a href="#template">TemplatePage</a>
+				<a href="#page1">Page1</a>
+			</div>
+			<footer data-role="footer" data-position="fixed">
+				<h4>&copy;@iiiedu</h4>
+			</footer>
+		</div>
+		
+		<script src="script/jquery-2.1.4.min.js"></script>
+		<script src="script/jquery.mobile-1.4.5.min.js"></script>
+		<script>
+			(function($){
+			
+			})(jQuery);
+		</script>
+	</body>
+</html>

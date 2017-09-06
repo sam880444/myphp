@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery Site</title>
+	
+	</head>
+	<body>
+		<h1>write less do more</h1>
+		
+	<script src="script/jquery-2.1.4.min.js"></script>
+		<script>
+		//下面的函式是立即執行函式
+		//網頁載入時會立即被執行
+		//使用的目的是為了避免有廣域變數的存在
+		(function($){
+			$('h1').css('color','pink');
+			
+			var name = ["Tom","Mary","Jack"];
+			//console.log(name[0]);
+			// $.each(name,function(i,v){
+				// //names是陣列,所以function中的i就是index索引值 0,1,2
+				// //names是陣列,所以function中的v就是value Tom,Mary,Jack
+				// console.log(i);
+				// console.log(v);
+			// });
+			
+			//object
+			var emp = {"name":"Tom","age":35,"email":"Tom@gmail.com"};
+			//console.log(emp.name);
+			//console.log(emp.age);
+			//console.log(emp.email);
+			// $.each(emp,function(n,v){
+				//emp是陣列,所以function中的n就是屬性名稱 name,age,email
+				//emp是陣列,所以function中的v就是屬性值(value) Tom,35,Tom@gmail.com
+				// console.log(n);
+				// console.log(v);
+			// });
+			
+			//json => array + object
+			var datas = [
+				{"name":"Tom","age":35,"email":"Tom@gmail.com"},
+				{"name":"Mary","age":27,"email":"Mary@gmail.com"},
+				{"name":"Jack","age":31,"email":"Jack@gmail.com"}];
+			//datas =>array
+			$.each(datas,function(i,emp){
+				//emp => object
+				console.log(emp.name);
+				console.log(emp.age);
+				console.log(emp.email);
+			});
+			
+			var data ={"emps":[
+				{"name":"Tom","age":35,"email":"Tom@gmail.com"},
+				{"name":"Mary","age":27,"email":"Mary@gmail.com"},
+				{"name":"Jack","age":31,"email":"Jack@gmail.com"}]};
+			
+			$.each(data.emps,function(i,emp){
+				//emp => object
+				console.log(emp.name);
+				console.log(emp.age);
+				console.log(emp.email);
+
+			});
+		})(jQuery);
+		</script>
+	</body>
+</html>

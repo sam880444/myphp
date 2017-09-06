@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>08formObject.html</title>	
+		<script>
+			window.onload=function(){
+				document.getElementById("idbutton").onclick=fcheck;
+				document.getElementById("idsubmit").onclick=fsubmit;
+			};
+			function fcheck(){
+				var eleLen=document.forms[0].elements.length;
+				//alert(eleLen);
+				for(var i=0;i<eleLen;i++){
+					// alert(document.forms[0].elements[i].tagName);
+					if(document.forms[0].elements[i].checked)
+						alert(document.forms[0].elements[i].value);
+				}
+			}
+			function fsubmit(){
+				if(document.getElementsByName("txtName")[0].value=="")
+					document.getElementById("idsp").innerHTML="not blank";
+				else
+					document.forms[0].submit();
+			}
+		</script>	
+	</head>
+  
+	<body>
+		<form action="get.php" method="get"><!--資料送到get.php-->
+			name:<input type="text" name="txtName" value="abc" /><span id="idsp"></span><br/>
+			<input type="checkbox" name="hobby" checked="checked" value="reading">reading
+			<input type="checkbox" name="hobby" value="game">game
+			<input type="checkbox" name="hobby" value="sleep">sleep
+			<br/><!--不會印出來-->
+			<input type="submit" value="送出" />
+			<input id="idbutton" type="button" value="check" />
+            <input id="idsubmit" type="button" value="submit" />
+		</form>
+	</body>
+</html>

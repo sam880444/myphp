@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery Site</title>
+	
+	</head>
+	<body>
+	   <a href="jQuerySelectors.html">Selectors</a> |
+       <a href="jQueryWritingStyle.html">WritingStyle</a> |
+       <a href="http://www.facebook.com">Facebook</a> |
+       <a href="http://www.google.com">Google</a><hr>
+		<input type="text" id="text1">
+		<input type="button" value="click" id="button1">
+		<span></span><span></span>
+		<hr>
+		<input type="button"  value="Toggle" id="buttonToggle">
+		<input type="checkbox" name="a" value="a1" >A1
+		<input type="checkbox" name="a" value="a2" checked="">A2
+		<input type="checkbox" name="a" value="a3" >A3
+		<input type="checkbox" name="a" value="a4" checked="">A4
+		<input type="checkbox" name="a" value="a5" >A5
+		<input type="checkbox" name="b" value="b1" >B1
+		<input type="button" value="get" id="buttonGet">
+		<div id="myDiv"></div>
+		<hr>
+		<h1 id="myH">write less do more</h1>
+		
+		<script src="script/jquery-2.1.4.min.js"></script>
+		<script>
+		//下面的函式是立即執行函式
+		//網頁載入時會立即被執行
+		//使用的目的是為了避免有廣域變數的存在
+		(function($){
+			$('#text1').val("guest");  //寫入
+			$('#button1').click(function(){
+				//value屬性的讀寫都要透過val()
+				// console.log($('#text1').val());
+				var v=$('#text1').val(); //讀取
+				//開始標籤及結束標籤裡面的內容 讀寫要透過text()
+				// $('#button1+span').text("<h2>Hello "+v+"</h2>");
+				// $('#button1~span').html("<h2>Hello "+v+"</h2>");
+				$('#button1+span').html("<h2>Hello "+v+"</h2>");
+			});
+			
+			$('a[href ^="http://"]').attr('target','_blank');
+			
+			$('#buttonToggle').click(function(){
+                   //一次控制全部
+                   // if($(this).val() =="Toggle") {
+                        // $(this).val("unToggle");
+                        // $(':checkbox').prop('checked',true);   
+                   // }else{
+                       // $(this).val("Toggle");
+                       // $(':checkbox').prop('checked',false);
+                   // }
+                   //逐個控制
+                   $(':checkbox').each(function(){
+                   		var b =!$(this).prop('checked');
+                   		$(this).prop('checked',b);
+                   });
+                });
+			$('#buttonGet').click(function(){
+				$('#myDiv').empty();
+                $(':checked[name="a"]').each(function(){
+                   // if($(this).prop('checked')){
+                       var v = $(this).val();
+                       $('#myDiv').append(v+"<br>");
+                   // }
+                });
+			});
+			
+			// console.log($(':checkbox:eq(0)').attr('checked'));
+			// console.log($(':checkbox:eq(1)').attr('checked'));
+			// console.log($(':checkbox:eq(2)').attr('checked'));
+			// console.log($(':checkbox:eq(3)').attr('checked'));
+			// console.log($(':checkbox:eq(4)').attr('checked'));
+// 			
+			// console.log($(':checkbox:eq(0)').prop('checked'));
+			// console.log($(':checkbox:eq(1)').prop('checked'));
+			// console.log($(':checkbox:eq(2)').prop('checked'));
+			// console.log($(':checkbox:eq(3)').prop('checked'));
+			// console.log($(':checkbox:eq(4)').prop('checked'));
+			
+			// $('#myH').prepend("<u>aaaaa</u>")
+                     // .append("bbbbb")
+                     // .before("yxxxxx")
+                     // .after("<u>yyyyy</u>");
+            $('<u>aaaaa</u>').prependTo('#myH');
+            //$ -> jQuery 要將??轉成jQuery物件
+            //??必須是帶有html標籤,$才能將??轉成jQery物件 純文字不行
+            //所以下面這行程式會沒有效果
+            //$("bbbb").appendTo('#myH');
+            //要改寫成
+            $("<i>bbbb</i>").appendTo('#myH');
+            
+            //$('#myH').empty(); //清除節點內容
+            //$('#myH').remove();//刪除節點
+            
+		})(jQuery);
+		</script>
+	</body>
+</html>

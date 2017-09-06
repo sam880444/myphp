@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery Site</title>
+	
+	</head>
+	<body>
+		<h1>write less do more</h1>
+		
+	<script src="script/jquery-2.1.4.min.js"></script>
+		<script>
+		//下面的函式是立即執行函式
+		//網頁載入時會立即被執行
+		//使用的目的是為了避免有廣域變數的存在
+		(function($){
+			$('h1').css('color','pink');
+		})(jQuery);
+		</script>
+	</body>
+</html>

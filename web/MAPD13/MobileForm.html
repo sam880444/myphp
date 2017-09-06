@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>jQuery Site</title>
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+		<style>
+   			
+        </style>
+	</head>
+	<body>
+		<div data-role="page" id="template">
+			<header data-role="header"
+					data-position="fixed"
+			  		data-add-back-btn="true"
+			  		data-back-btn-text="返回">
+				<h1>Form Page</h1>
+			</header>
+			<div class="ui-content">
+				<form>
+					<div class="ui-field-contain">
+						<label for="name">User Name</label>
+						<input type="text" name="name" id="name">
+					</div>
+					<div class="ui-field-contain">
+                       <label for="email">User Email</label>
+                       <input type="email" name="email" id="email">
+                   </div>
+                   <div class="ui-field-contain">
+                       <label for="blog">User Blog</label>
+                       <input type="url" name="blog" id="blog">
+                   </div>
+                   <div class="ui-field-contain">
+                       <label for="phone">User Phone</label>
+                       <input type="tel" name="phone" id="phone">
+                   </div>
+                   <div class="ui-field-contain">
+                       <label for="age">User age</label>
+                       <input type="range" name="age" id="age" min="20" max="100" step="1" value="30">
+                   </div>
+                   <div class="ui-field-contain">
+                       <label for="birth">Birth</label>
+                       <input type="date" name="birth" id="birth">
+                   </div>
+                   <div class="ui-field-contain">
+                   	<label for="enabled">Enabled</label>
+                   	<select data-role="flipswitch" name="enabled" id="enabled">
+                   		<option value="0">On</option>
+                   		<option value="1">Off</option>
+                   	</select>
+                   </div>
+
+				</form>
+				
+			</div>
+			<footer data-role="footer" data-position="fixed">
+				<h4>&copy;@iiiedu</h4>
+			</footer>
+		</div>
+		<div data-role="page" id="page1">
+			<header data-role="header"
+					data-position="fixed"
+					data-add-back-btn="true"
+					data-back-btn-text="返回">
+				<h1>Page 1</h1>
+			</header>
+			<div class="ui-content">
+				<p>內容出現區</p>
+				<a href="#template">TemplatePage</a>
+				<a href="#page2">Page2</a>
+			</div>
+			<footer data-role="footer" data-position="fixed">
+				<h4>&copy;@iiiedu</h4>
+			</footer>
+		</div>
+		<div data-role="page" id="page2">
+			<header data-role="header"
+					data-position="fixed"
+					data-add-back-btn="true"
+					data-back-btn-text="返回">
+				<h1>Page 2</h1>
+			</header>
+			<div class="ui-content">
+				<p>內容出現區</p>
+				<a href="#template">TemplatePage</a>
+				<a href="#page1">Page1</a>
+			</div>
+			<footer data-role="footer" data-position="fixed">
+				<h4>&copy;@iiiedu</h4>
+			</footer>
+		</div>
+		
+		<script src="script/jquery-2.1.4.min.js"></script>
+		<script src="script/jquery.mobile-1.4.5.min.js"></script>
+		<script>
+			(function($){
+			
+			})(jQuery);
+		</script>
+	</body>
+</html>

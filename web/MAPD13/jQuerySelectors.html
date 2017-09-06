@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery Site</title>
+	
+	</head>
+	<body>
+		<h2>Selectors Demo</h2>
+		<a href="a.doc">A(doc)</a> | <a href="a.pdf">A(pdf)</a><br>
+		<a href="b.doc">B(doc)</a> | <a href="b.pdf">B(pdf)</a><br>
+		<input type="text" value="請輸入"><br>
+		<input type="text" value="請輸入"><br>
+		<input type="text" value="請輸入"><br>
+		<input type="button" value="Click"><br>
+		<hr>
+		<table class="simpleTable">
+			<thead>
+				<tr>
+					<th>Col1</th>
+					<th>Col2</th>
+					<th>Col3</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>0A</td>
+					<td>1B</td>
+					<td>2C</td>
+				</tr>
+				<tr>
+					<td>3D</td>
+					<td>4E</td>
+					<td>5F</td>
+				</tr>
+				<tr>
+					<td>6G</td>
+					<td>7H</td>
+					<td>8I</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	<script src="script/jquery-2.1.4.min.js"></script>
+		<script>
+		//下面的函式是立即執行函式
+		//網頁載入時會立即被執行
+		//使用的目的是為了避免有廣域變數的存在
+		(function($){
+			//attribute selectors 屬性選擇器
+			//$('input[type="text"]').css('color','silver');
+			//此$ 表示比對後面的字元 ^表示比對前面的字元
+			$('a[href $= ".doc"]').css({
+				'text-decoration':'none',
+				'background':'url(images/word.png) no-repeat',
+				'padding-left':'20px'
+			});
+			$('a[href $= ".pdf"]').css({
+				'text-decoration':'none',
+				'background':'url(images/pdf.png) no-repeat',
+				'padding-left':'20px'
+			});
+			//form selectors 
+			$(':text').css('color','silver');
+			
+			$('.simpleTable').css({
+				'width':'300px',
+				'border':'1px solid green',
+				'border-collapse':'collapse'
+			});
+			// $('.simpleTable>thead>tr>th,.simpleTable>tbody>tr>td').css({  同下
+			$('.simpleTable th,.simpleTable td').css({
+				'border':'1px solid green',
+				'padding':'4px'
+			});
+			
+			//basic filter selectors
+			// $('.simpleTable td:eq(4)').css('background-color','green');  //E
+			// $('.simpleTable td:lt(3)').css('background-color','orange'); //A B C
+			// $('.simpleTable td:gt(5)').css('background-color','yellow');  //G H I
+			
+			$('.simpleTable>tbody>tr>td:even').css('background-color','orange'); //索引值
+			$('.simpleTable>tbody>tr>td:odd').css('background-color','yellow');
+			
+			//child filter selectors
+			//$('.simpleTable td:nth-child(odd)').css('background-color','orange');
+			//$('.simpleTable td:nth-child(even)').css('background-color','yellow');
+		})(jQuery);
+		</script>
+	</body>
+</html>

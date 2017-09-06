@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery Site</title>
+	
+	</head>
+	<body>
+		<form>
+			<input type="text" name="userName" placeholder="user name">
+			<input type="text" name="age" placeholder="user age">
+		</form>
+		<input type="button" value="Load" id="buttonAjax">
+		<select id="select1"></select>
+		<div id="myDiv"></div>
+		
+	<script src="script/jquery-2.1.4.min.js"></script>
+		<script>
+		//下面的函式是立即執行函式
+		//網頁載入時會立即被執行
+		//使用的目的是為了避免有廣域變數的存在
+		(function($){
+			$('#buttonAjax').on("click",function(){
+				// $.get('get.php',{"userName":"Tom","age":36},function(data){
+					//var name = $(":text[name='userName']").val();
+					//var age = $(":text[name='age']").val();
+					
+					var formData = $('form').serialize();
+					console.log(formData);
+				$.post('post.php',formData,function(data){
+					//data就是server端回傳的結果
+					$('#myDiv').html("<h2>" + data + "</h2>");
+				});
+				
+				// $.getJSON('GetCategories_PDO.php',{},function(datas){
+					// //datas就是server端回傳的結果,其個JSON物件
+					// $.each(datas,function(i,category){
+						// var id = category.CategoryID;
+						// var name = category.CategoryName;
+						// var opt = $("<option></option>").text(name).val(id);
+						// $('#select1').append(opt)
+						// });
+					// });
+			});
+		})(jQuery);
+		</script>
+	</body>
+</html>

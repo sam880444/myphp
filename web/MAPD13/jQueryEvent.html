@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery Site</title>
+	
+	</head>
+	<body>
+		<h1>write less do more</h1>
+		<input type="button" value="Click" id="buttonEvent">
+		<div id="myDiv"></div>
+		<ul id="myUl">
+			<li>Item1</li>
+			<li>Item2</li>
+		</ul>
+	<script src="script/jquery-2.1.4.min.js"></script>
+		<script>
+		//下面的函式是立即執行函式
+		//網頁載入時會立即被執行
+		//使用的目的是為了避免有廣域變數的存在
+		(function($){
+			$('h1').css('color','pink');
+			
+			//$('#buttonEvent').click(function(){});
+			// $('#buttonEvent').click(show);
+			// $('#buttonEvent').bind('click',show);
+			// $('#buttonEvent').one('click',show);
+			$('#buttonEvent').on('click',show);
+			function show(){
+				$('#myDiv').append("on<br>");
+			}			
+			
+			// $('#myUl>li').bind('click',function(){
+				// alert($(this).text());
+			// });
+			
+			$('#myUl').on('click','li',function(){
+				alert($(this).text());
+			});
+			
+			//因為Item3是動態加入網頁的內容 所以事件綁定不到
+			//解決方法要使用on來綁定事件
+			var items =["Item3","Item4","Item5"];
+			$.each(items,function(i,item){
+                   var li = $("<li></li>").text(item);
+                   $('#myUl').append(li); 
+			});
+		})(jQuery);
+		</script>
+	</body>
+</html>

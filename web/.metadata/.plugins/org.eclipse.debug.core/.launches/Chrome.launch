@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.aptana.js.debug.core.webbrowserLaunchConfigurationType">
+<booleanAttribute key="advancedRunEnabled" value="false"/>
+<booleanAttribute key="appendProjectName" value="true"/>
+<stringAttribute key="browserCmdLine" value=""/>
+<stringAttribute key="browserExecutable" value="/Applications/Google Chrome.app"/>
+<stringAttribute key="externalBaseUrl" value="http://localhost:8888"/>
+<stringAttribute key="httpGetData" value=""/>
+<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+<listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
+</listAttribute>
+<intAttribute key="serverType" value="3"/>
+<intAttribute key="startActionType" value="1"/>
+<stringAttribute key="startPagePath" value=""/>
+<stringAttribute key="startPageUrl" value=""/>
+</launchConfiguration>

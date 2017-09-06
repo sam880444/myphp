@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery Site</title>
+		<style>
+			.s1{
+				color:orange;
+				background-color:cyan;
+				width:300px;
+				border:1px solid gray;
+				text-align:center;
+				padding:5px;
+			}
+			 .s2{
+                color:purple;
+                background-color:green;
+                width:300px;
+                border:1px solid gray;
+                text-align:center;
+                padding:5px;
+            }
+		</style>
+	</head>
+	<body>
+		<h1>write less do more</h1>
+		<h1>write less do more</h1>
+		<h1>write less do more</h1>
+		<h1>write less do more</h1>
+		<h1>write less do more</h1>
+		<input type="button" value="Toggle" id="buttonToggle">
+	<script src="script/jquery-2.1.4.min.js"></script>
+	<script src="script/jquery-ui.min.js"></script>
+		<script>
+		//下面的函式是立即執行函式
+		//網頁載入時會立即被執行
+		//使用的目的是為了避免有廣域變數的存在
+		(function($){
+			$('h1').addClass('s1')
+					.hover(over,out);
+				   //.mouseover(over)
+				   //.mouseout(out);
+			function over(){
+                    //$(this).removeClass('s1',1000).addClass('s2',1000);
+                    $(this).switchClass('s1','s2',1000);
+               	}
+            function out(){
+           	        // $(this).removeClass('s2',1000).addClass('s1',1000);
+           	        $(this).switchClass('s2','s1',1000);
+                }
+			$('#buttonToggle').click(function(){
+				// if($('h1:last').hasClass('s1')){
+					// $('h1:last').removeClass('h1');
+				// }els{
+					// $('h1:last').addClass('h1');
+				// }
+				$('h1:last').toggleClass('s1',1000);
+			});
+			
+		})(jQuery);
+		</script>
+	</body>
+</html>

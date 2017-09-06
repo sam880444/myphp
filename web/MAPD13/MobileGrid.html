@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>jQuery Site</title>
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    </head>
+    <body>
+       <div data-role="page" id="template">
+           <header data-role="header" data-position="fixed">
+               
+               <h1>Grid Page</h1>
+           </header>
+           <div class="ui-content">
+               <form action="#" name="myCalc">
+               	<input type="text" name="txt">
+               	<div class="ui-grid-c">
+                       <div class="ui-block-a">
+                           <button type="button" onclick="myCalc.txt.value+=7">7</button>
+                       </div>
+                       <div class="ui-block-b">
+                           <button type="button" onclick="myCalc.txt.value+=8">8</button>
+                       </div>
+                       <div class="ui-block-c">
+                           <button type="button" onclick="myCalc.txt.value+=9">9</button>
+                       </div>
+                       <div class="ui-block-d">
+                           <button type="button" onclick="myCalc.txt.value+='+'">+</button>
+                       </div>
+                       <div class="ui-block-a">
+                           <button type="button" onclick="myCalc.txt.value+=4">4</button>
+                       </div>
+                       <div class="ui-block-b">
+                           <button type="button" onclick="myCalc.txt.value+=5">5</button>
+                       </div>
+                       <div class="ui-block-c">
+                           <button type="button" onclick="myCalc.txt.value+=6">6</button>
+                       </div>
+                       <div class="ui-block-d">
+                           <button type="button" onclick="myCalc.txt.value+='-'">-</button>
+                       </div>
+                       <div class="ui-block-a">
+                           <button type="button" onclick="myCalc.txt.value+=1">1</button>
+                       </div>
+                       <div class="ui-block-b">
+                           <button type="button" onclick="myCalc.txt.value+=2">2</button>
+                       </div>
+                       <div class="ui-block-c">
+                           <button type="button" onclick="myCalc.txt.value+=3">3</button>
+                       </div>
+                       <div class="ui-block-d">
+                           <button type="button" onclick="myCalc.txt.value+='*'">*</button>
+                       </div>
+                       <div class="ui-block-a">
+                           <button type="button" onclick="myCalc.txt.value+='.'">.</button>
+                       </div>
+                       <div class="ui-block-b">
+                           <button type="button" onclick="myCalc.txt.value+='0'">0</button>
+                       </div>
+                       <div class="ui-block-c">
+                           <button type="button" onclick="myCalc.txt.value=''">c</button>
+                       </div>
+                       <div class="ui-block-d">
+                           <button type="button" onclick="myCalc.txt.value=eval(myCalc.txt.value)">=</button>
+                       </div>
+                   </div>
+               </form>
+               
+           </div>
+           <footer data-role="footer" data-position="fixed" data-fullscreen="true">
+               <h4>&copy;iiiedu</h4>
+           </footer>
+       </div>
+       <div data-role="page" id="page1">
+           <header data-role="header" data-position="fixed" data-add-back-btn="true" data-back-btn-text="返回">
+               <h1>Page 1</h1>
+               
+           </header>
+           <div class="ui-content">
+               <p>內容出現區</p>
+               <a href="#template">TemplatePage</a><br>
+               <a href="#page2">Page2</a>
+           </div>
+           <div data-role="footer">
+               <h4>&copy;iiiedu</h4>
+           </div>
+       </div>
+       <div data-role="page" id="page2">
+           <header data-role="header" data-position="fixed" data-add-back-btn="true" data-back-btn-text="返回">
+               <h1>Page 2</h1>
+               
+           </header>
+           <div class="ui-content">
+               <p>內容出現區</p>
+               <a href="#template">TemplatePage</a><br>
+               <a href="#page1">page1</a>
+           </div>
+           <div data-role="footer">
+               <h4>&copy;iiiedu</h4>
+           </div>
+       </div>
+       <script src="script/jquery-2.1.4.min.js"></script>
+       <script src="script/jquery.mobile-1.4.5.min.js"></script>
+        <script>
+            
+            (function($){
+               
+            })(jQuery);
+        </script>
+    </body>
+</html>
+

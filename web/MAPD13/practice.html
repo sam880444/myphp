@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery Site</title>
+    </head>
+    <body>
+        <h1>Write Less Do More</h1>
+        <select id ="select1">
+            <option value="a">Item1</option>
+            <option value="b">Item2</option>
+            <option value="c">Item3</option>
+            <option value="d">Item4</option>
+        </select>
+        <span id="span1"></span>
+       <script src="script/jquery-2.1.4.min.js"></script>
+        <script>
+          	//立即執行函式
+            //網頁載入時會立即執行
+            //使用的目的是為了避免有廣域變數的存在
+            (function($){
+                // $('select1+span1').text("<h2>"+select>option.value+"</h2>");
+             	$('h1').css('color','pink');
+                $('#select1').change(function(){
+                	//$(this) 就是 select1
+                	// var v = $(this).val();
+                	var v = $('#select1>:selected').val();
+                	var t = $('#select1>:selected').text();
+                	var i = $('#select1>:selected').index();
+                	// console.log($('#select1>:selected').text());
+                	$('#span1').html("<h2>"+i+","+v+","+t+"</h2>");
+                });
+            })(jQuery);
+        </script>
+    </body>
+</html>
+
